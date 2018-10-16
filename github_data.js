@@ -4409,36 +4409,122 @@ const githubData = [
 
 // Question #1
 // create variable that holds number of commits array 
-let commitCount = 0
+// let commitCount = 0
 
 
-// iterate over githubData array
-for (let i=0; i < githubData.length; i++) {
-  const element = githubData[i];
-  if(element.payload.commits) {
-    let commitAry = element.payload.commits.length;
-    commitCount += commitAry;
-  }
-}
+// // iterate over githubData array
+// for (let i = 0; i < githubData.length; i++) {
+//   const element = githubData[i];
+//   if (element.payload.commits) {
+//     let commitAry = element.payload.commits.length;
+//     commitCount += commitAry;
+//   }
+// }
 
-console.log(commitCount);
+// console.log(commitCount);
 
 
 // Question #2
 
-let taco = [];
+// let taco = [];
 
+// // iterate over githubData.type to create array of the instances of data types
+// for (let i = 0; i < githubData.length; i++) {
+//   taco.push(githubData[i].type)
+// }
+
+// // would love to say that I came up with this myself, but it's straight from stack overflow:
+// const counts = {};
+// for (var i = 0; i < taco.length; i++) {
+//     counts[taco[i]] = 1 + (counts[taco[i]] || 0);
+// }
+
+// console.log(counts);
+
+
+// Question #3
+// Just gonna list all github users who submitted a request.  Question is a bit misleading since there's no indication that submissions are approved by Steve
+
+// const authors = []
+
+// for (let i = 0; i < githubData.length; i++) {
+//   const element = githubData[i];
+//   if (element.payload.commits) {
+//     for (let j = 0; j < element.payload.commits.length; j++) {
+//       authors.push(element.payload.commits[j].author.name)
+//     }
+//   }
+// }
+
+// console.log(authors);
+
+// const authorCount = {};
+// for (var i = 0; i < authors.length; i++) {
+//   authorCount[authors[i]] = 1 + (authorCount[authors[i]] || 0);
+// }
+
+// console.log(authorCount);
+
+// Question #4
+// List all repositories on which Steve had an event, and show how many events were on each one.
+
+// const steveEvents = []
+
+// for (let i = 0; i < githubData.length; i++) {
+//   const element = githubData[i];
+//   if (element.actor.login === "stevebrownlee") {
+//     steveEvents.push(element.repo.name);
+//   }
+// }
+
+// const steveEventCount = {};
+// for (var i = 0; i < steveEvents.length; i++) {
+//   steveEventCount[steveEvents[i]] = 1 + (steveEventCount[steveEvents[i]] || 0);
+// }
+
+// console.log(steveEventCount)
+
+// Question #5
+// Which event had the most number of commits?
+
+// const eventCommits = []
+
+// for (let i = 0; i < githubData.length; i++) {
+//   const element = githubData[i];
+//   if (element.payload.commits) {
+//       eventCommits.push(githubData[i].type);
+//   }
+// }
+
+// const eventCount = {};
+// for (var i = 0; i < eventCommits.length; i++) {
+//   eventCount[eventCommits[i]] = 1 + (eventCount[eventCommits[i]] || 0);
+// }
+
+// console.log(eventCount);
+
+// Question #6
+// Which programming langugages were affected by Steve's events?
+
+const langAffected = []
 
 for (let i = 0; i < githubData.length; i++) {
-  taco.push(githubData[i].type)
-  for (let j = 0; i < taco.length; j++ {
-    taco
+  let element = githubData[i]
+  if (element.payload.pull_request){
+    if (element.payload.pull_request.head.repo.language){
+      langAffected.push(element.payload.pull_request.head.repo.language)
+    }
   }
 }
 
+const langCount = {};
+for (var i = 0; i < langAffected.length; i++) {
+  langCount[langAffected[i]] = 1 + (langCount[langAffected[i]] || 0);
+}
 
+console.log(langCount)
 
+// Question #7
+// What programming language was the most affected by Steve's events?
 
-// iterate over taco
-// if value for taco is not identified(unknown?), add to new variable
-// if value is known, add to variable count
+// Answer, see langCount above.  Answer is JS

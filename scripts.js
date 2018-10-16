@@ -72,4 +72,79 @@
 
 // }
 
+// 1.Write a function that takes a string of a dog breed as an argument (like ‘border collie’)
+
+// const breed = (type) => {
+//   if (type === undefined) {
+//     return (`I like cats`);
+//   } else {
+//     return (`My favorite dog breed is ${type}.`)
+//   }
+// }
+
+// // 2.Have the function return “my favorite dog breed is” plus the passed in string. If no argument is passed to the function, return “I like cats”.
+
+// // 3.Execute the function in a way that captures the returned value in a variable.
+// console.log(breed("Labrador"));
+// breed();
+// // 4.Console.log the string “When it comes to pets,” plus the returned value of the function.
+
+// console.log(`When it comes to pets, ${breed("Boston Terrier")}`);
+
+// const getMyFullName = (first, last) => `${first} ${last}`;
+
+// const sayMyFullname = (firstName, lastName, action) => action(firstName, lastName);
+
+// console.log(sayMyFullname("Richard", "Lancaster", getMyFullName));
+
+
+
+// 1.Create a function that creates an object with three properties: name, age, profession. Have the function take an array as an argument. In the body of the function, loop over the array to set the values of the object’s properties. log the result to the console as a table.
+
+// const personalInfo = (name, age, profession) => {
+//   const personalAry = [name, age, profession];
+//   personalObjectMaker(personalAry);
+// }
+
+// 2.Create a second function that takes three arguments: name, age, profession. Have the function place the three arguments into an array and pass that array to the first function by calling it.
+
+// const personalObjectMaker = (array) => {
+//   let personalObj = {}
+//   const properties = ["name", "age", "profession"]
+//   properties.forEach((property, index) => {
+//     personalObj[property] = array[index]
+//   });
+//   return console.table(personalObj)
+// }
+
+// personalInfo("Daisy", 14, "taker of naps");
+
+// const add = (a, b)=> {
+//   return a + b;
+// }
+
+// const sub = (a, b) => a - b
+
+// const performAction = (a, b, action) => {
+//   return action(a, b)
+// }
+
+// const addTest = performAction(5, 7, add);
+// const subTest = performAction(5, 7, sub);
+
+// console.log(addTest);
+// console.log(subTest)
+
+
+// 1. Create a function that logs the result of adding two numbers
+
+// const lightningOne = (a, b) => a + b
+
+// // 2. Create a second function called calculate that takes three arguments: two numbers and a function
+
+// let lightningCalc = (c, d, calc) => calc(c, d); 
+
+// // 3. Execute the second function and make it output 5
+
+// console.log(lightningCalc(2, 3, lightningOne));
 
